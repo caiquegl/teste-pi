@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finzalizar pedido</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+            
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticia">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa">Mapa</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 btn-pai">
+                    <% if(typeof usuario === 'undefined') {%>
+                      <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                      <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+                    <% }else { %>
+                      <p><%= usuario.nome %></p>
+                    <% } %>
+                
+                
+              </form>
+            </div>
+          </nav>        
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="pag">
+                    <div class="row">
+                        <h1>Selecione uma forma de pagamento</h1>
+                        <img src="img/dinheiro-icon.png" class="din">
+                    </div>
+                    <div class="row">
+                        <img src="img/cartaoDeCredito.png" alt="Cartão de credito">
+                        <img src="img/boleto.png" alt="Boleto">
+                    </div>
+                    <div class="row">
+                        <button type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Selecionar</button>
+                        <button type="button" data-target=".bd-example-modal-lg">Selecionar</button>
+                        <!-- Modal -->
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                <h2>Selecione seu cartão</h2>
+                                <div class="row">
+                                    <div class="cartao">
+                                        <div class="row">
+                                            <input type="checkbox" aria-label="Checkbox for following text input"><p>1234.****.****.****</p> <p>Val: 12/28</p> <p>CVC: 098</p></button>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <input type="checkbox" aria-label="Checkbox for following text input"><p>1234.****.****.****</p> <p>Val: 12/28</p> <p>CVC: 098</p></button>
+                                        </div>
+                                    </div>
+                                    <div class="parcelamento">
+                                        <ul>
+                                            <li><input type="radio" aria-label="Radio button for following text input">Á vista <strong>R$62,97</strong></li>
+                                            <li><input type="radio" aria-label="Radio button for following text input">2x <strong>R$31,48</strong></li>
+                                            <li><input type="radio" aria-label="Radio button for following text input">3x <strong>R$20,99</strong></li>
+                                            <li><input type="radio" aria-label="Radio button for following text input">4x <strong>R$15,74</strong></li>
+                                            <li><input type="radio" aria-label="Radio button for following text input">5x <strong>R$12,59</strong></li>
+                                            <li><input type="radio" aria-label="Radio button for following text input">6x <strong>R$10,49</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button type="submit" class="button-modal">Confirmar</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="finalizar">
+                    <h2>Nº Pedido <mark>00000001</mark></h2>
+                    <a href="cliente"><button type="button">Finalizar</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="container regras">
+            <div>
+                <p>O preço e a disponibilidade dos produtos  estão sujeitos a alterações. O carrinho de compras é um local temporário para armazenar uma lista de seus produtos e reflete o preço mais atualizado de cada um deles.</p>
+        
+                <p>Você tem um cartão-presente ou um código promocional? Solicitaremos que você insira seu código de reivindicação quando for a hora de pagar.</p>
+            </div>
+        </div>
+
+    </main>
+    <footer class="container-fluid">
+        <div class="row foot">
+            <p>Learning - copyright</p>
+            <img src="img/Learning map-logo - white.png">
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>

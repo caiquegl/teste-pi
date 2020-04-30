@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/favicon.ico">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+            
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticia">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa">Mapa</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 btn-pai">
+                <% if(typeof usuario === 'undefined') {%>
+                    <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                    <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+                  <% }else { %>
+                    <p><%= usuario.nome %></p>
+                  <% } %>
+                
+                
+              </form>
+            </div>
+          </nav>        
+    </header>
+    <main>
+        <h1 class="new">Notícias</h1>
+        <div class="container news">
+            <div class="row"><a href="https://educacao.uol.com.br/noticias/2020/04/06/enem-isencao-2020.htm">
+                <img src="https://conteudo.imguol.com.br/c/noticias/34/2020/01/21/concursos-publicos-provas-vestibular-1579643338912_v2_900x506.jpg" alt="Notícias enem">
+                <div>
+                    <h2>
+                        Enem 2020: Estão abertas as inscrições para os pedidos de isenção de taxa.
+                    </h2>
+                    <h4>
+                        Data da notícia: 07/04/2020
+                    </h4>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container news">
+            <div class="row"><a href="https://g1.globo.com/ap/amapa/noticia/2020/04/07/isencao-de-taxa-de-inscricao-do-enem-esta-disponivel-a-8-mil-estudantes-do-ap-veja-requisitos.ghtml">
+                <img src="https://conteudo.imguol.com.br/c/noticias/34/2020/01/21/concursos-publicos-provas-vestibular-1579643338912_v2_900x506.jpg" alt="Notícias enem">
+                <div>
+                    <h2>
+                        Insenção de taxa de inscrição do Enem está disponível a 8 mil estudantes de AP.
+                    </h2>
+                    <h4>
+                        Data da notícia: 07/04/2020
+                    </h4>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container news">
+            <div class="row"><a href="https://www.techtudo.com.br/noticias/2020/04/como-funciona-o-enem-digital-2020-saiba-tudo-sobre-a-prova-online.ghtml">
+                <img src="https://s2.glbimg.com/xZXarTLjSRPmH6jG9KBt-wvB0vo=/0x0:1279x752/2000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/k/t/IVzeOMQQeT6UeBwQ94Bw/enem-2019-tem-inscricao-aberta-ate-17-de-maio.jpg" alt="Notícias enem">
+                <div>
+                    <h2>
+                        Como funciona o ENEM Digital 2020? Saiba tudo sobre a prova online
+                    </h2>
+                    <h4>
+                        Data da notícia: 03/04/2020
+                    </h4>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="pg-new"><a href="#"> < Pagina anterior </a>, <a href="#">Proxima pagina ></a></Pagina></p>
+        
+    </main>
+    <footer class="container-fluid">
+        <div class="row foot">
+            <p>Learning - copyright</p>
+            <img src="img/Learning map-logo - white.png">
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>

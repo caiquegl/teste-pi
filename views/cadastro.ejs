@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+            
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticia">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa">Mapa</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 btn-pai">
+                <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+              </form>
+            </div>
+          </nav>        
+    </header>
+    <main>
+        <div class="container">
+            <div class="cadastro">
+            <form method="post" action="/registro">
+              <h2>Cadastre-se</h2>
+              <h4>preecha o formulario abaixo</h4>
+              <div class="row">
+                <div class="left">
+                  <label for="inputEmail4">Email:</label>
+                  <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" class="email">
+                  <label for="inputPassword4">Senha:</label>
+                  <input name="password" type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                  <label for="inputEmail4">CPF:</label>
+                  <input name="CPF" type="text" class="form-control" id="inputEmail4" placeholder="CPF">
+                </div>
+                <div class="rigth">
+                  <label for="inputPassword4">Nome completo:</label>
+                  <input name="nome" type="text" class="form-control" id="inputPassword4" placeholder="Nome completo">
+                  <label for="inputEmail4">Endereço:</label>
+                  <input name="endereco" type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                  <label for="inputPassword4">Data de nascimento:</label>
+                  <input name="nascimento" type="date" class="form-control" id="inputPassword4" placeholder="DD/MM/AAAA">
+                </div>
+              </div>
+              <div class="row">
+                <div class="left">
+                  Sexo:
+                  <br>
+                  <input name="feminino" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                  <label class="custom-control-label esp" for="customRadioInline1">Feminino</label>
+                  <input name="masculino" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadioInline2">Masculino</label>
+                </div>
+                <div class="rigth">
+                  Deseja receber ofertas pelo email?
+                  <br>
+                  <input name="newsim" type="radio" id="customRadioInline3" name="customRadioInline2" class="custom-control-input">
+                  <label  class="custom-control-label esp" for="customRadioInline3">Sim</label>
+                  <input name="newno" type="radio" id="customRadioInline4" name="customRadioInline2" class="custom-control-input">
+                  <label class="custom-control-label" for="customRadioInline4">Não</label>
+                </div>
+              </div>  
+                  <button type="submit" class="btn">Finalizar Cadastro</button> 
+                  
+                         
+            </form>
+          </div>
+        </div>
+    </main>
+    <footer class="container-fluid">
+      <div class="row foot">
+          <p>Learning - copyright</p>
+          <img src="img/Learning map-logo - white.png">
+      </div>
+  </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>

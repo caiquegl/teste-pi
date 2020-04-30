@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-comerce</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+            
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticia">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa">Mapa</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 btn-pai">
+                    <% if(typeof usuario === 'undefined') {%>
+                      <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                      <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+                    <% }else { %>
+                      <p><%= usuario.nome %></p>
+                    <% } %>
+                
+                
+              </form>
+            </div>
+          </nav>        
+    </header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="infoProduto">
+                <div class="row">
+                    <img src="img/ecomerce/item1.jpg" alt="Produto">
+                    <div class="text">
+                        <h2>Livro - Do mil ao milhão</h2>
+                        <p>Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria expe...
+                        </p>
+                        <a href="#infoItem">Mais informações</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="frete">
+                <p class="de"> De R$ 34,99</p>
+                <p class="por">Por R$25,99</p>
+                <hr>
+                <p class="frete-prazo">Calcular frete e pazo:</p>
+                <div class="row">
+                    <form action="cep" method="post">
+                        <input type="text" name="cep" maxlength="8" OnKeyPress="formatar('#####-###', this)" placeholder="Digite seu cep">
+                        <button type="submit">Ok</button>
+                    </form>
+                </div>
+                <hr>
+                <a href="finalizar"><button type="submit" class="btn-comprar">Comprar :) <img src="img/ecomerce/carrinho.png"></button></a>
+                <a href="carrinho"><button type="submit" class="btn-adicionar">Adicionar <img src="img/ecomerce/carrinho.png"></button></a>
+            </div>
+                <div id="infoItem">
+                    <h1>Informações do produto</h1>
+                    <p>Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria experiência como investidor e assessor, Nigro mostra que a riqueza é possível para todos – basta estar disposto a aprender e se dedicar.</p>
+                </div>
+       </div>
+    </div>
+</main>
+
+
+    <footer class="container-fluid">
+    <div class="row foot">
+        <p>Learning - copyright</p>
+        <img src="img/Learning map-logo - white.png">
+    </div>
+    </footer>  
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticia">Notícias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mapa">Mapa</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 btn-pai">
+                        <% if(typeof usuario === 'undefined') {%>
+                          <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                          <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+                        <% }else { %>
+                          <p><%= usuario.nome %></p>
+                        <% } %>
+                    
+                    
+                  </form>
+            </div>
+        </nav>
+    </header>
+    <main class="container carrinho">
+        <div id="carrinho">
+            <h1>Carrinho de Compras</h1>
+
+            <!-- intens no carrinho-->
+
+            <div class="row">
+                <img src="img/ecomerce/item1.jpg" alt="Produto">
+                <div class="text">
+                    <H1><STRONG>Do Mil ao Milhão. Sem Cortar o Cafezinho.</STRONG> por Thiago Nigro</H1>
+                    <h2>Em estoque</h2>
+                    <h2>Elegível para Frete GRÁTIS</h2>
+                    <h3>Este pedido é para presente ? <input type="checkbox" class="check"><b>Sim </b></h2>
+                        <div class="quant">
+                            <p><mark>Quant.</mark> <mark> 1 </mark></p>
+                        </div>
+                </div>
+                <div class="valores">
+                    <p>Valor Unitario: <b>R$ 25,99</b></p>
+                    <hr>
+                    <p>Desconto: <b>0%</b></p>
+                    <hr>
+                    <p>Valor Total: <b>R$ 25,99</b></p>
+                </div>
+            </div>
+
+            <!-- finaliza item-->
+
+            <hr>
+
+            <div class="row">
+                <img src="img/ecomerce/item2.jpg" alt="Produto">
+                <div class="text">
+                    <H1><STRONG>Do Mil ao Milhão. Sem Cortar o Cafezinho.</STRONG> por Thiago Nigro</H1>
+                    <h2>Em estoque</h2>
+                    <h2>Elegível para Frete GRÁTIS</h2>
+                    <h3>Este pedido é para presente ? <input type="checkbox" class="check"><b>Sim </b></h2>
+                        <div class="quant">
+                            <p><mark>Quant.</mark> <mark> 1 </mark></p>
+                        </div>
+                </div>
+                <div class="valores">
+                    <p>Valor Unitario: <b>R$ 25,99</b></p>
+                    <hr>
+                    <p>Desconto: <b>0%</b></p>
+                    <hr>
+                    <p>Valor Total: <b>R$ 25,99</b></p>
+                </div>
+            </div>
+
+            <!-- finaliza item-->
+
+            <hr>
+            <div class="row">
+                <form action="cep" method="post">
+                    <label for="cel">Digite seu CEP:</label>
+                    <input type="text" name="cep" maxlength="8" OnKeyPress="formatar('#####-###', this)"
+                        placeholder="Digite seu cep">
+                    <button type="submit">Calcular</button>
+                </form>
+                <div class="p">
+                    <p>Valor do frete: <strong>R$10,99</strong></p>
+                </div>
+                <div class="total">
+                    <p>Valor total do pedido: <strong>R$62,97</strong></p>
+                </div>
+
+                <form action="cupom" method="post">
+                    <label for="cupom">Digite seu codigo do cupom:</label>
+                    <input type="text" name="cupom" maxlength="8" OnKeyPress="formatar('#####-###', this)"
+                        placeholder="Digite seu cupom">
+                    <button type="submit">Aplicar</button>
+                </form>
+                <a href="finalizar"><button type="submit" class="btn-carrinho">Finalizar pedido </button></a>
+            </div>
+
+        </div>
+        <!-- Finaliza carrinho-->
+    </main>
+
+    <div class="container regras">
+        <div>
+            <p>O preço e a disponibilidade dos produtos estão sujeitos a alterações. O carrinho de compras é um local
+                temporário para armazenar uma lista de seus produtos e reflete o preço mais atualizado de cada um deles.
+            </p>
+
+            <p>Você tem um cartão-presente ou um código promocional? Solicitaremos que você insira seu código de
+                reivindicação quando for a hora de pagar.</p>
+        </div>
+    </div>
+
+
+
+
+    <footer class="container-fluid">
+        <div class="row foot">
+            <p>Learning - copyright</p>
+            <img src="img/Learning map-logo - white.png">
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

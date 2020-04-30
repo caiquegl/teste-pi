@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha pagina</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
+            
+            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="noticia">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mapa">Mapa</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 btn-pai">
+                  <% if(typeof usuario === 'undefined') {%>
+                    <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
+                    <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
+                  <% }else { %>
+                    <p><%= usuario.nome %></p>
+                  <% } %>
+                
+                
+              </form>
+            </div>
+          </nav>        
+    </header>
+    <main class="container cliente">
+        <h1>Minha conta</h1>
+        <h2>Pedidos</h2>
+        <div class="row">
+            <h3>Nº Pedido</h3>
+            <mark>0000001</mark>
+            <h3>Data do pedido:</h3>
+            <p>06/04/2020</p>
+            <h3>Status:</h3>
+            <p>Processando pagamento</p>
+        </div>
+        <hr>
+        <div class="row">
+            <h3>Nº Pedido</h3>
+            <mark>0000001</mark>
+            <h3>Data do pedido:</h3>
+            <p>06/04/2020</p>
+            <h3>Status:</h3>
+            <p>Processando pagamento</p>
+        </div>
+        <hr class="hr">
+        <h2>Endereço</h2>
+        <form>
+            <div class="row">
+              <div class="col-5">
+                <label for="Rua">Digite o nome da sua rua:</label>
+                <input type="text" class="form-control rua" id="formGroupExampleInput" placeholder="Digite o nome da sua rua com o numero" name="Rua">
+              </div>
+            
+                <div class="col-5">
+                <label for="Complemento">Complemento:</label>
+                <input type="text" class="form-control Complemento" id="formGroupExampleInput" placeholder="Complemento" name="Complemento">
+                </div>
+
+                <div class="col-5">
+                    <label for="cep">Cep:</label>
+                    <input type="text" class="form-control cep" id="formGroupExampleInput" name="cep" maxlength="8" OnKeyPress="formatar('#####-###', this)" placeholder="_ _ _ _ _ - _ _ _">
+                </div>
+
+                <div class="col-5 estado">
+                    <label for="estado">Estado</label>
+                    <select class="form-control" id="exampleInputCountry" name="estado">
+                      <option value="" selected="selected">Selecione um estado</option>
+                      <option value="United States">Acre</option>
+                      <option value="United Kingdom">Alagoas</option>
+                      <option value="Afghanistan">Amapá</option>
+                      <option value="Albania">Amazonas</option>
+                      <option value="Algeria">Bahia</option>
+                      <option value="United States">Ceará</option>
+                      <option value="United Kingdom">Distrito Federal</option>
+                      <option value="Afghanistan">Espiríto Santo</option>
+                      <option value="Albania">Goiás</option>
+                      <option value="Algeria">Maranhão</option>
+                      <option value="United States">Mato Grosso</option>
+                      <option value="United Kingdom">Mato grosso do sul</option>
+                      <option value="Afghanistan">Minas Gerais</option>
+                      <option value="Albania">Pará</option>
+                      <option value="Algeria">Paraíba</option>
+                      <option value="United States">Paraná</option>
+                      <option value="United Kingdom">Pernambuco</option>
+                      <option value="Afghanistan">Piauí</option>
+                      <option value="Albania">Rio de Janeiro</option>
+                      <option value="Algeria">Rio Grande Do Norte</option>
+                      <option value="Albania">Rio Grande Do Sul</option>
+                      <option value="Algeria">Rondônia</option>
+                      <option value="United States">Roraima</option>
+                      <option value="United Kingdom">Santa Catarina</option>
+                      <option value="Afghanistan">São Paulo</option>
+                      <option value="Albania">Sergipe</option>
+                      <option value="Algeria">Tocantins</option>
+                    </select>
+                </div>
+
+                <div class="col-5">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" class="form-control cidade" id="formGroupExampleInput" placeholder="Digite o nome da sua cidade" name="cidade">
+                </div>
+
+                <button type="button">Adicionar mais de um endereço</button>
+
+            </div>   
+        </form>
+
+        <hr class="hr">
+            <h2>Cartões</h2>
+            <form>
+                <div class="row">
+                    <div class="col-5">
+                    <label for="numero-cartao">Digite o nome do seu cartão:</label>
+                    <input type="text" class="form-control cartao-number" id="formGroupExampleInput" name="numero-cartao" OnKeyPress="formatar('####-####-####-####', this)" placeholder="Digite o numero do seu cartão" maxlength="16">
+                    </div>
+                
+                    <div class="col-5">
+                    <label for="nome-titular">Nome do titular:</label>
+                    <input type="text" class="form-control nome-titular" id="formGroupExampleInput" placeholder="Digite o nome impresso no cartão" name="nome-titular">
+                    </div>
+    
+                    <div class="col-5">
+                        <label for="validade">Validade:</label>
+                        <input type="text" class="form-control cep" id="formGroupExampleInput" name="validae" maxlength="4"  placeholder="_ _ / _ _">
+                    </div>
+
+                    <div class="col-5 validade">
+                        <label for="validade">CVV:</label>
+                        <input type="text" class="form-control cep" id="formGroupExampleInput" name="validae" maxlength="3"  placeholder="Digite o codigo">
+                    </div>
+                    <button type="button">Adicionar mais de um cartão</button>
+                </div>
+            </form>
+
+            <hr class="hr">
+
+            <h2>meu cadastro</h2>
+            <form>
+            <div class="form-row">
+                  <div class="col-5">
+                    <label for="inputEmail4">Email:</label>
+                    <input type="email" class="form-control email" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="col-5">
+                    <label for="inputPassword4">Senha:</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+                  </div>
+                      <div class="col-5">
+                        <label for="inputEmail4">CPF:</label>
+                        <input type="text" class="form-control CPF" id="inputEmail4" placeholder="CPF">
+                      </div>
+                      <div class="col-5">
+                        <label for="inputPassword4">Nome completo:</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nome completo">
+                      </div>
+                      <div class="col-5 nasc">
+                        <label for="inputPassword4">Data de nascimento:</label>
+                        <input type="date" class="form-control" id="inputPassword4" placeholder="DD/MM/AAAA">
+                      </div>
+                      <div class="sexo">
+                          <div class="col">
+                              <label for="sexo">Qual seu sexo:</label>
+                              <br>
+                              <input type="checkbox" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label">Masculino</label>
+                              <br>
+                              <input type="checkbox" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label">Feminino</label>  
+                          </div>
+                      </div>
+                      <div class="col sexo">
+                          <h5>Gostaria de assinar nosso newlestter?</h5>
+                        <input type="checkbox" class="form-check-input" id="newlester">
+                        <label class="form-check-label" for="newlester">Sim</label>
+                      </div>
+                </div>
+                
+                <div class="col sexo">
+                  <label class="form-check-label" for="newlester">Se for comerciante ou professor e queira utilizar nossa plataforma do e-commerce diga sim, e iremos enviar um email  solicitando suas comprovações que irão para analise:</label>
+                  <br>
+                  <input type="checkbox" class="form-check-input" id="newlester">
+                        <label class="form-check-label" for="newlester">Sim</label>
+                </div>                 
+                
+              </form>
+              <button type="submit" class="atualizar">Atualizar cadastro</button>
+    
+    </main>
+    <footer class="container-fluid">
+        <div class="row foot">
+            <p>Learning - copyright</p>
+            <img src="img/Learning map-logo - white.png">
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+</body>
+</html>
