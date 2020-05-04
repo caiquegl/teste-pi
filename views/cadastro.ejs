@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
-
-
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg ">
-            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
-            
-            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                  <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="noticia">Notícias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mapa">Mapa</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0 btn-pai">
-                <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
-                <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
-              </form>
-            </div>
-          </nav>        
-    </header>
+<%- include('./partials/header') %>
     <main>
         <div class="container">
             <div class="cadastro">
@@ -69,18 +27,19 @@
                 <div class="left">
                   Sexo:
                   <br>
-                  <input name="feminino" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                  <label class="custom-control-label esp" for="customRadioInline1">Feminino</label>
-                  <input name="masculino" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadioInline2">Masculino</label>
+                  <input type="checkbox" name="sexo" value="feminino" id="sexo">
+                  <label for="sexo">Feminino</label>
+                  <input type="checkbox" name="sexo" value="masculino" id="sexo">
+                  <label for="sexo">Masculino</label>
+                  
                 </div>
                 <div class="rigth">
                   Deseja receber ofertas pelo email?
                   <br>
-                  <input name="newsim" type="radio" id="customRadioInline3" name="customRadioInline2" class="custom-control-input">
-                  <label  class="custom-control-label esp" for="customRadioInline3">Sim</label>
-                  <input name="newno" type="radio" id="customRadioInline4" name="customRadioInline2" class="custom-control-input">
-                  <label class="custom-control-label" for="customRadioInline4">Não</label>
+                  <input type="checkbox" name="ofertas" value="1" id="ofertas">
+                  <label for="ofertas">Sim</label>
+                  <input type="checkbox" name="ofertas" value="0" id="ofertas">
+                  <label for="ofertas">Não</label>
                 </div>
               </div>  
                   <button type="submit" class="btn">Finalizar Cadastro</button> 

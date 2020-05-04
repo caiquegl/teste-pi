@@ -1,52 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-comerce</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
+<%- include('./partials/header') %>
 
-
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg ">
-            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
-            
-            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                  <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="noticia">Notícias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mapa">Mapa</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0 btn-pai">
-                  <% if(typeof usuario === 'undefined') {%>
-                    <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
-                    <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
-                  <% }else { %>
-                    <p><%= usuario.nome %></p>
-                  <% } %>
-                
-                
-              </form>
-            </div>
-          </nav>        
-    </header>
 
     <div class="container caro">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -227,15 +180,16 @@
                   </nav>
                   <div class="produtos-pai">
                     <div class="row">
+                      <% produtos.forEach(element => {%> 
 
                     <div class="produtos">
-                      <a href="infoProdutos">
-                        <img src="img/ecomerce/item1.jpg" alt="Produto">                        
+                      <a href="infoProdutos/<% element.id_produto %>">
+                        <img src="foto/<%= element.foto %>" alt="Produto">                        
                         <article>
-                            <p class="titulo">Livro - Do mil ao milhão</p>
+                            <p class="titulo"><%= element.nome_produto %></p>
                             <div class="row">
-                            <p class="left">De <em>R$ 34,90</em></p>
-                            <P class="right">Por R$ 25,90</P>
+                            <p class="left">De <em><%= element.valor %></em></p>
+                            <P class="right"><%= element.valor %></P>
                             </div>
                         </article>
                       </a>
@@ -243,131 +197,11 @@
                         </button></a>
                     </div>
                   
-                
-                    <div class="produtos1">
-                      <a href="#">
-                        <img src="img/ecomerce/item2.jpg" alt="Produto">                        
-                        <article>
-                            <p class="titulo">Livro - A surtil arte de ligar o foda-se</p>
-                            <div class="row">
-                            <p class="left">De <em>R$ 34,90</em></p>
-                            <P class="right">Por R$ 25,90</P>
-                            </div>
-                        </article>
-                      </a>
-                        <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                        </button>
-                    </div>
+                    <% }); %>
 
-                    <div class="produtos">
-                      <a href="#">
-                      <img src="img/ecomerce/item1.jpg" alt="Produto">                        
-                      <article>
-                          <p class="titulo">Livro - Do mil ao milhão</p>
-                          <div class="row">
-                          <p class="left">De <em>R$ 34,90</em></p>
-                          <P class="right">Por R$ 25,90</P>
-                          </div>
-                      </article>
-                    </a>
-                      <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                      </button>
-                  </div>
-                
-              
-                  <div class="produtos1">
-                    <a href="#">
-                      <img src="img/ecomerce/item2.jpg" alt="Produto">                        
-                      <article>
-                          <p class="titulo">Livro - A surtil arte de ligar o foda-se</p>
-                          <div class="row">
-                          <p class="left">De <em>R$ 34,90</em></p>
-                          <P class="right">Por R$ 25,90</P>
-                          </div>
-                      </article>
-                    </a>
-                      <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                      </button>
-                  </div>
-
-                  <div class="produtos">
-                    <a href="#">
-                    <img src="img/ecomerce/item1.jpg" alt="Produto">                        
-                    <article>
-                        <p class="titulo">Livro - Do mil ao milhão</p>
-                        <div class="row">
-                        <p class="left">De <em>R$ 34,90</em></p>
-                        <P class="right">Por R$ 25,90</P>
-                        </div>
-                    </article>
-                  </a>
-                    <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                    </button>
-                </div>
-              
-            
-                <div class="produtos1">
-                  <a href="#">
-                    <img src="img/ecomerce/item2.jpg" alt="Produto">                        
-                    <article>
-                        <p class="titulo">Livro - A surtil arte de ligar o foda-se</p>
-                        <div class="row">
-                        <p class="left">De <em>R$ 34,90</em></p>
-                        <P class="right">Por R$ 25,90</P>
-                        </div>
-                    </article>
-                  </a>
-                    <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                    </button>
-                </div>
-
-                <div class="produtos">
-                  <a href="#">
-                  <img src="img/ecomerce/item1.jpg" alt="Produto">                        
-                  <article>
-                      <p class="titulo">Livro - Do mil ao milhão</p>
-                      <div class="row">
-                      <p class="left">De <em>R$ 34,90</em></p>
-                      <P class="right">Por R$ 25,90</P>
-                      </div>
-                  </article>
-                </a>
-                  <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                  </button>
-              </div>
-            
+                    
           
-              <div class="produtos1">
-                <a href="#">
-                  <img src="img/ecomerce/item2.jpg" alt="Produto">                        
-                  <article>
-                      <p class="titulo">Livro - A surtil arte de ligar o foda-se</p>
-                      <div class="row">
-                      <p class="left">De <em>R$ 34,90</em></p>
-                      <P class="right">Por R$ 25,90</P>
-                      </div>
-                  </article>
-                </a>
-                  <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                  </button>
-              </div>
-
-              <div class="produtos">
-                <a href="#">
-                <img src="img/ecomerce/item1.jpg" alt="Produto">                        
-                <article>
-                    <p class="titulo">Livro - Do mil ao milhão</p>
-                    <div class="row">
-                    <p class="left">De <em>R$ 34,90</em></p>
-                    <P class="right">Por R$ 25,90</P>
                     </div>
-                </article>
-              </a>
-                <button class="btn btn-primary" type="submit">Adicionar ao carrinho 
-                </button>
-            </div>
-          
-
                   </div>
                 </div>
             </div>

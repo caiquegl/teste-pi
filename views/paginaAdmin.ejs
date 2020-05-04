@@ -47,13 +47,14 @@
     </header>
     <div class="container news items">
         <div class="add-item">
-            <h2>Adicionar produto</h2>
-            <form action="#" method="post">
+            
+            <form action="/paginaAdmin" method="post" enctype="multipart/form-data">
+                <h2>Adicionar produto</h2>
                 <div class="form-group">
-                    <label for="nome">
+                    <label for="nome_produto">
                         Nome do produto:
                     </label>
-                    <input type="text" name="nome" placeholder="Nome do produto">
+                    <input type="text" name="nome_produto" placeholder="Nome do produto">
                 </div>
                
                 <div class="form-group">
@@ -63,15 +64,17 @@
                     <input type="text" name="valor" placeholder="Valor">
                 </div>
                 <div class="form-group">
-                    <label for="descri">
+                    <label for="descricao">
                         Descrição do produto:
                     </label>
-                    <textarea name="descri" placeholder="Breve descrição"></textarea>
+                    <textarea name="descricao" placeholder="Breve descrição"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <label for="foto">Example file input</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="foto">
                 </div>
+                <input type="number" name="id_usuario" value="<%= usuario.id %>">
+
                 <button type="submit">Enviar</button>
             </form>
         </div>
@@ -82,18 +85,15 @@
         <div class="vendidos">
             <h2>Itens vendidos</h2>
             <ul>
-                <li>
-                    <div>
-                        Nome do produto: <strong>Curso de matematica</strong> | Codígo do produto: <strong>#098867</strong>| Quantidade vendida: <strong>5</strong> | Total a receber: <strong>R$ 120,00</strong>
-                    </div>
-                    <hr>
-                </li>
-                <li>
-                    <div>
-                        Nome do produto: <strong>Curso de matematica</strong> | Codígo do produto: <strong>#098867</strong>| Quantidade vendida: <strong>5</strong> | Total a receber: <strong>R$ 120,00</strong>
-                    </div>
-                    <hr>
-                </li>
+                <% produtos.forEach(element => {%> 
+                    <li>
+                        <div>
+                            Nome do produto: <strong><%= element.nome_produto %></strong> | Codígo do produto: <strong><%= element.id_produto %></strong>| Quantidade vendida: <strong>5</strong> | Total a receber: <strong>R$ 120,00</strong>
+                        </div>
+                        <hr>
+                    </li>
+                <% }); %>
+                
             </ul>
         </div>
     </div>

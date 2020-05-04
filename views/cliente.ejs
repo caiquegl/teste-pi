@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha pagina</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
+<%- include('./partials/header') %>
 
 
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg ">
-            <a href="index"><img src="img/Learning map-logo - black.png" alt="Logo"></a>
-            
-            <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                  <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="noticia">Notícias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ecomerce">Loja Virtual</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mapa">Mapa</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0 btn-pai">
-                  <% if(typeof usuario === 'undefined') {%>
-                    <a href="registro"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-regis" type="button">Registar</button></a>
-                    <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 btn-nav-login" type="button">Login</button></a>
-                  <% }else { %>
-                    <p><%= usuario.nome %></p>
-                  <% } %>
-                
-                
-              </form>
-            </div>
-          </nav>        
-    </header>
     <main class="container cliente">
         <h1>Minha conta</h1>
         <h2>Pedidos</h2>
@@ -73,7 +27,7 @@
             <div class="row">
               <div class="col-5">
                 <label for="Rua">Digite o nome da sua rua:</label>
-                <input type="text" class="form-control rua" id="formGroupExampleInput" placeholder="Digite o nome da sua rua com o numero" name="Rua">
+                <input type="text" class="form-control rua" id="formGroupExampleInput" placeholder="Digite o nome da sua rua com o numero" name="Rua" value="<%= usuario.endereco %>">
               </div>
             
                 <div class="col-5">
@@ -164,7 +118,7 @@
             <div class="form-row">
                   <div class="col-5">
                     <label for="inputEmail4">Email:</label>
-                    <input type="email" class="form-control email" id="inputEmail4" placeholder="Email">
+                    <input type="email" class="form-control email" id="inputEmail4" placeholder="Email" value="<%= usuario.email %>">
                   </div>
                   <div class="col-5">
                     <label for="inputPassword4">Senha:</label>
@@ -172,23 +126,31 @@
                   </div>
                       <div class="col-5">
                         <label for="inputEmail4">CPF:</label>
-                        <input type="text" class="form-control CPF" id="inputEmail4" placeholder="CPF">
+                        <input type="text" class="form-control CPF" id="inputEmail4" placeholder="CPF" value="<%= usuario.CPF %>">
                       </div>
                       <div class="col-5">
                         <label for="inputPassword4">Nome completo:</label>
-                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nome completo">
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Nome completo" value="<%= usuario.nome %>">
                       </div>
                       <div class="col-5 nasc">
                         <label for="inputPassword4">Data de nascimento:</label>
-                        <input type="date" class="form-control" id="inputPassword4" placeholder="DD/MM/AAAA">
+                        <input type="date" class="form-control" id="inputPassword4" placeholder="DD/MM/AAAA" value="<%= usuario.nascimento %>">
                       </div>
                       <div class="sexo">
                           <div class="col">
                               <label for="sexo">Qual seu sexo:</label>
                               <br>
-                              <input type="checkbox" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label">Masculino</label>
+                                <% if(usuario.sexo == 'masculino'){ %>
+                                  <input type="checkbox" name="sexo" value="masculino" class="form-check-input"  checked><label class="form-check-label">Masculino</label>
+                                <% }else { %>
+                                  <input type="checkbox" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label">Masculino</label>
+                                <% } %>
                               <br>
-                              <input type="checkbox" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label">Feminino</label>  
+                                <% if(usuario.sexo == 'feminino'){ %>
+                                  <input type="checkbox" name="sexo" value="feminino" class="form-check-input"  checked><label class="form-check-label">Feminino</label>
+                                <% }else { %>
+                                  <input type="checkbox" name="sexo" value="feminino" class="form-check-input"><label class="form-check-label">Feminino</label>
+                                <% } %>
                           </div>
                       </div>
                       <div class="col sexo">
