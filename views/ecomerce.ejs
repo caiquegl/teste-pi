@@ -183,7 +183,7 @@
                       <% produtos.forEach(element => {%> 
 
                     <div class="produtos">
-                      <a href="infoProdutos/<% element.id_produto %>">
+                      <a href="/infoProdutos/<%= element.id_produto %>">
                         <img src="foto/<%= element.foto %>" alt="Produto">                        
                         <article>
                             <p class="titulo"><%= element.nome_produto %></p>
@@ -193,11 +193,14 @@
                             </div>
                         </article>
                       </a>
-                        <a href="carrinho"><button class="btn btn-primary" type="submit">Adicionar ao carrinho 
+                        <a href="/carrinho"><button class="btn btn-primary" type="submit">Adicionar ao carrinho 
                         </button></a>
                     </div>
                   
                     <% }); %>
+
+
+                    
 
                     
           

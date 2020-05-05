@@ -6,10 +6,12 @@
         <div class="row">
             <div class="infoProduto">
                 <div class="row">
-                    <img src="img/ecomerce/item1.jpg" alt="Produto">
+                    <% infoProduto.forEach(element => {%> 
+
+                    <img src="/foto/<%= element.foto %>" alt="Produto">
                     <div class="text">
-                        <h2>Livro - Do mil ao milhão</h2>
-                        <p>Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria expe...
+                        <h2><%= element.nome_produto %></h2>
+                        <p><%= element.descricao %>
                         </p>
                         <a href="#infoItem">Mais informações</a>
                     </div>
@@ -18,19 +20,21 @@
 
             <div class="frete">
                 <p class="de"> De R$ 34,99</p>
-                <p class="por">Por R$25,99</p>
+                <p class="por" onkeypress="$(this).mask('R$ 999.990,00')"> <%= element.valor %></p>
                 <hr>
                 <p class="frete-prazo">Calcular frete e pazo:</p>
                 <div class="row">
                     <form action="cep" method="post">
-                        <input type="text" name="cep" maxlength="8" OnKeyPress="formatar('#####-###', this)" placeholder="Digite seu cep">
+                        <input type="text" name="cep" maxlength="8"  placeholder="Digite seu cep" onkeypress="$(this).mask('00.000-000')"">
                         <button type="submit">Ok</button>
                     </form>
                 </div>
                 <hr>
-                <a href="finalizar"><button type="submit" class="btn-comprar">Comprar :) <img src="img/ecomerce/carrinho.png"></button></a>
-                <a href="carrinho"><button type="submit" class="btn-adicionar">Adicionar <img src="img/ecomerce/carrinho.png"></button></a>
+                <a href="/finalizar"><button type="submit" class="btn-comprar">Comprar :) <img src="/img/ecomerce/carrinho.png"></button></a>
+                <a href="/carrinho"><button type="submit" class="btn-adicionar">Adicionar <img src="/img/ecomerce/carrinho.png"></button></a>
             </div>
+            <% }); %>
+
                 <div id="infoItem">
                     <h1>Informações do produto</h1>
                     <p>Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria experiência como investidor e assessor, Nigro mostra que a riqueza é possível para todos – basta estar disposto a aprender e se dedicar.</p>
@@ -43,7 +47,7 @@
     <footer class="container-fluid">
     <div class="row foot">
         <p>Learning - copyright</p>
-        <img src="img/Learning map-logo - white.png">
+        <img src="/img/Learning map-logo - white.png">
     </div>
     </footer>  
 
@@ -51,6 +55,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
 

@@ -31,6 +31,7 @@ router.get('/ecomerce', bodyController.ecomerce);
 router.get('/finalizar', bodyController.validando, bodyController.finalizar);
 router.get('/infoProdutos/:id', bodyController.infoProdutos);
 
+
 router.get('/login', bodyController.login);
 router.post('/login', bodyController.validatorLogin);
 

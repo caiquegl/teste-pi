@@ -93,9 +93,9 @@ const bodyController = {
     },
     infoProdutos: async (req, res) => {
       const con = new Sequelize(config);
-      const id = req.query;
-      const produtos = await con.query(
-        "select * from produtos where id_produtos=:produtos_id;",
+      const id = req.params.id;
+      const infoProduto = await con.query(
+        "select * from produtos where id_produto=:produtos_id;",
         {
           replacements: {
             produtos_id: id
@@ -103,8 +103,9 @@ const bodyController = {
           type: Sequelize.QueryTypes.SELECT,
         }
       );
-        return res.render("infoProdutos", {usuario: req.session.usuario, produtos: produtos});
+        return res.render("infoProdutos", {usuario: req.session.usuario, infoProduto: infoProduto});
     },
+
     login: (_req, res) => {
         return res.render("login");
     },
@@ -123,7 +124,7 @@ const bodyController = {
       );
   
       if (!usuario || !bcrypt.compareSync(password, usuario.password)) {
-        return res.render("cadastro", {
+        return res.render("login", {
           msg: "Email ou senha errados!",
         });
       }
