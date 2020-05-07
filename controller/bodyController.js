@@ -44,7 +44,7 @@ const bodyController = {
     },
 
     storeProduto: async (req, res) => {
-      const {nome_produto, valor, descricao, id_usuario} = req.body;
+      const {nome_produto, valor, descricao, usuario_idusuario} = req.body;
       const con = new Sequelize(config);
       const [foto] = req.files;
 
@@ -53,13 +53,13 @@ const bodyController = {
 
 
       const user = await con.query(
-          "INSERT INTO produtos (nome_produto, valor, descricao, id_usuario, foto) values (:nome_produto, :valor, :descricao,:id_usuario, :foto)",
+          "INSERT INTO postar (nome_produto, valor, descricao, usuario_idusuario, foto) values (:nome_produto, :valor, :descricao,:usuario_idusuario, :foto)",
           {
             replacements: {
               nome_produto,
               valor,
               descricao, 
-              id_usuario,
+              usuario_idusuario,
               foto: [foto.filename]
             },
             type: Sequelize.QueryTypes.INSERT,
@@ -86,8 +86,10 @@ const bodyController = {
           type: Sequelize.QueryTypes.SELECT,
         }
       );
+    
         return res.render("ecomerce", {usuario: req.session.usuario, produtos: produtos});
     },
+    
     finalizar: (req, res) => {
         return res.render("finalizar", {usuario: req.session.usuario});
     },
