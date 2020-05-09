@@ -5,54 +5,38 @@
             <h1>Carrinho de Compras</h1>
 
             <!-- intens no carrinho-->
+            <% carrinho.forEach(element => {%> 
+
 
             <div class="row">
-                <img src="img/ecomerce/item1.jpg" alt="Produto">
+                <img src="./foto/<%= element.foto_produto %>" alt="Produto">
                 <div class="text">
-                    <H1><STRONG>Do Mil ao Milhão. Sem Cortar o Cafezinho.</STRONG> por Thiago Nigro</H1>
+                    <H1><STRONG><%= element.nome_produto %>.</STRONG></H1>
                     <h2>Em estoque</h2>
                     <h2>Elegível para Frete GRÁTIS</h2>
                     <h3>Este pedido é para presente ? <input type="checkbox" class="check"><b>Sim </b></h2>
                         <div class="quant">
-                            <p><mark>Quant.</mark> <mark> 1 </mark></p>
+                            <p><mark>Quant.</mark> <mark> <%= element.quantidade %> </mark></p>
                         </div>
                 </div>
                 <div class="valores">
-                    <p>Valor Unitario: <b>R$ 25,99</b></p>
+                    <p>Valor Unitario: <b>R$ <%= element.valor_produto %></b></p>
                     <hr>
                     <p>Desconto: <b>0%</b></p>
                     <hr>
                     <p>Valor Total: <b>R$ 25,99</b></p>
                 </div>
+                <hr>
             </div>
+            <% }) %>
+            <!-- finaliza item-->
+
+            
+
+            
 
             <!-- finaliza item-->
 
-            <hr>
-
-            <div class="row">
-                <img src="img/ecomerce/item2.jpg" alt="Produto">
-                <div class="text">
-                    <H1><STRONG>Do Mil ao Milhão. Sem Cortar o Cafezinho.</STRONG> por Thiago Nigro</H1>
-                    <h2>Em estoque</h2>
-                    <h2>Elegível para Frete GRÁTIS</h2>
-                    <h3>Este pedido é para presente ? <input type="checkbox" class="check"><b>Sim </b></h2>
-                        <div class="quant">
-                            <p><mark>Quant.</mark> <mark> 1 </mark></p>
-                        </div>
-                </div>
-                <div class="valores">
-                    <p>Valor Unitario: <b>R$ 25,99</b></p>
-                    <hr>
-                    <p>Desconto: <b>0%</b></p>
-                    <hr>
-                    <p>Valor Total: <b>R$ 25,99</b></p>
-                </div>
-            </div>
-
-            <!-- finaliza item-->
-
-            <hr>
             <div class="row">
                 <form action="cep" method="post">
                     <label for="cel">Digite seu CEP:</label>
